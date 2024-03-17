@@ -2,6 +2,5 @@
 <resources>
     <style name="circular">
         <item name="cornerSize">50%</item>
-        <item name="android:layout_margin">2dp</item>
     </style>
 </resources>

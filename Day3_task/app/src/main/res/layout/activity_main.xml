@@ -14,12 +14,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/textViewResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="60sp"/>
+            android:text="@string/button_number_zero"
+            android:textSize="70sp" />
 
     </LinearLayout>
 
@@ -57,7 +58,7 @@
                     android:gravity="center"
                     android:text="AC"
                     android:textColor="@android:color/black"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
             </RelativeLayout>
 
@@ -112,7 +113,7 @@
                     android:layout_alignEnd="@id/number_seven"
                     android:layout_alignBottom="@id/number_seven"
                     android:gravity="center"
-                    android:text="7"
+                    android:text="@string/button_number_seven"
                     android:textColor="@android:color/white"
                     android:textSize="40sp" />
             </RelativeLayout>
@@ -136,7 +137,7 @@
                     android:layout_alignEnd="@id/number_eight"
                     android:layout_alignBottom="@id/number_eight"
                     android:gravity="center"
-                    android:text="8"
+                    android:text="@string/button_number_eight"
                     android:textColor="@android:color/white"
                     android:textSize="40sp" />
             </RelativeLayout>
@@ -160,7 +161,7 @@
                     android:layout_alignEnd="@id/number_nine"
                     android:layout_alignBottom="@id/number_nine"
                     android:gravity="center"
-                    android:text="9"
+                    android:text="@string/button_number_nine"
                     android:textColor="@android:color/white"
                     android:textSize="40sp" />
             </RelativeLayout>
@@ -200,7 +201,7 @@
                     android:layout_alignEnd="@id/number_four"
                     android:layout_alignBottom="@id/number_four"
                     android:gravity="center"
-                    android:text="4"
+                    android:text="@string/button_number_four"
                     android:textColor="@android:color/white"
                     android:textSize="40sp" />
             </RelativeLayout>
@@ -224,7 +225,7 @@
                     android:layout_alignEnd="@id/number_five"
                     android:layout_alignBottom="@id/number_five"
                     android:gravity="center"
-                    android:text="5"
+                    android:text="@string/button_number_five"
                     android:textColor="@android:color/white"
                     android:textSize="40sp" />
             </RelativeLayout>
@@ -248,7 +249,7 @@
                     android:layout_alignEnd="@id/number_six"
                     android:layout_alignBottom="@id/number_six"
                     android:gravity="center"
-                    android:text="6"
+                    android:text="@string/button_number_six"
                     android:textColor="@android:color/white"
                     android:textSize="40sp" />
             </RelativeLayout>
@@ -287,7 +288,7 @@
                     android:layout_alignEnd="@id/number_one"
                     android:layout_alignBottom="@id/number_one"
                     android:gravity="center"
-                    android:text="1"
+                    android:text="@string/button_number_one"
                     android:textColor="@android:color/white"
                     android:textSize="40sp" />
             </RelativeLayout>
@@ -312,7 +313,7 @@
                     android:layout_alignEnd="@id/number_two"
                     android:layout_alignBottom="@id/number_two"
                     android:gravity="center"
-                    android:text="2"
+                    android:text="@string/button_number_two"
                     android:textColor="@android:color/white"
                     android:textSize="40sp" />
             </RelativeLayout>
@@ -336,7 +337,7 @@
                     android:layout_alignEnd="@id/number_three"
                     android:layout_alignBottom="@id/number_three"
                     android:gravity="center"
-                    android:text="3"
+                    android:text="@string/button_number_three"
                     android:textColor="@android:color/white"
                     android:textSize="40sp" />
             </RelativeLayout>
@@ -400,10 +401,11 @@
                     android:layout_alignEnd="@id/number_zero"
                     android:layout_alignBottom="@id/number_zero"
                     android:gravity="center"
-                    android:text="0"
+                    android:text="@string/button_number_one"
                     android:textColor="@android:color/white"
                     android:textSize="40sp" />
             </RelativeLayout>
+
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

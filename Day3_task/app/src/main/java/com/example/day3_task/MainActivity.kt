@@ -111,23 +111,33 @@ class MainActivity : AppCompatActivity() {
     //Display result
     private fun equalClick() {
         if (number.isNotEmpty() && operator != ' ') {
-            val secondNumber = number.toInt()
-            var result = 0
+            val secondNumber = number.toDouble()
+            var result = 0.0
             when (operator) {
                 '+' -> result = firstNumber + secondNumber
                 '-' -> result = firstNumber - secondNumber
                 '*' -> result = firstNumber * secondNumber
                 '/' -> {
-                    if (secondNumber != 0) {
+                    if (secondNumber != 0.0) {
                         result = firstNumber / secondNumber
                     }
                 }
             }
-            tvResult.text = result.toString()
+
+            // Check if result is integer or not
+            val isIntegerResult = (result % 1 == 0.0)
+
+            if (isIntegerResult) {
+                tvResult.text = result.toInt().toString() // Display integer result
+            } else {
+                tvResult.text = result.toString() // Display floating point result
+            }
+
             number = ""
             operator = ' '
         }
     }
+
 
     private fun clearCalculator() {
         number = ""

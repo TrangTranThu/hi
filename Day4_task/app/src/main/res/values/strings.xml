@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Day4_task</string>
+    <string name="header_login">Log In</string>
+    <string name="header_signup">Sign Up</string>
+    <string name="text_password">Password</string>
+    <string name="text_cfpassword">Confirm Password</string>
+</resources>

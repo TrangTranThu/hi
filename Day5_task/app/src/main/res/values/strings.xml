@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Day5_task</string>
+    <string name="user_name">__holle__</string>
+    <string name="tieu_su">Good morning, good afternoon, good evening</string>
+    <string name="translate">Xem bản dịch</string>
+    <string name="btn1">Chỉnh sửa</string>
+    <string name="btn2">Chia sẻ trang cá nhân</string>
+    <string name="instagram">Instagram</string>
+</resources>

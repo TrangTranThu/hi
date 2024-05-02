@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Day4_task</string>
+    <string name="txt_header_login">Log In</string>
+    <string name="txt_btn_login">Log In</string>
+    <string name="txt_signup">Sign Up</string>
+    <string name="txt_header_signup">Sign Up</string>
+    <string name="txtPassword">Password</string>
+    <string name="text_cfpassword">Confirm Password</string>
+    <string name="name_User1">TranThuTrang</string>
+    <string name="txtRememberMe">Remember Me</string>
+    <string name="txtEmail">Email</string>
+    <string name="txt">Don\'t have an account?</string>
+    <string name="txt_yourName"> Your Name</string>
+    <string name="txt_logout">Log Out</string>
+</resources>

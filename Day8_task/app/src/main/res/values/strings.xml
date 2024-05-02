@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Day8_task</string>
+    <string name="take_note">Take note</string>
+    <string name="favourite">Favourite</string>
+    <string name="add_note">Add note</string>
+    <string name="content">Content</string>
+    <string name="title">Title</string>
+    <string name="save_note">Save note</string>
+    <string name="create_at">Created at:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

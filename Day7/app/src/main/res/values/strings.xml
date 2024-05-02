@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Day7</string>
+    <string name="str_all_note">All note</string>
+    <string name="str_favourite">Favourite</string>
+</resources>

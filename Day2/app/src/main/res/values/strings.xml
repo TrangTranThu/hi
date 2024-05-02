@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Day2</string>
+    <string name="Header1">Hello</string>
+    <string name="Header2">Again!</string>
+    <string name="Header3">Welcome back you\'ve been missed </string>
+    <string name="Username">Username*</string>
+    <string name="Password">Password*</string>
+    <string name="Option">or continute with</string>
+    <string name="Account">don\'t have an account?</string>
+    <string name="Sign">Sign Up</string>
+</resources>

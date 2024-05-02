@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">day2task</string>
+    <string name="username">__holle__</string>
+    <string name="baiviet">9</string>
+    <string name="btn1">Chỉnh sửa</string>
+    <string name="btn2">Chia sẻ trang cá nhân</string>
+    <string name="txt_hightStory">Tin nổi bật</string>
+</resources>

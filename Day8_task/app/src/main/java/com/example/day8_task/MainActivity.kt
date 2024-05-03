@@ -8,9 +8,9 @@ import com.example.day8_task.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
     private val allNoteFragment = AllNoteFragment()
     private val favouriteNoteFragment = FavouriteNoteFragment()
-    private lateinit var noteDB: NoteRoomDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.commit {
             replace(binding.fv.id, allNoteFragment)
+        }
+
+        binding.btnAddNote.setOnClickListener {
+            startActivity(Intent(this, AddNoteActivity::class.java))
         }
 
         binding.tvTextNote.setOnClickListener {
@@ -30,10 +34,6 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.commit {
                 replace(binding.fv.id, favouriteNoteFragment)
             }
-        }
-
-        binding.btnAddNote.setOnClickListener {
-            startActivity(Intent(this, AddNoteActivity::class.java))
         }
     }
 //    override fun onResume() {

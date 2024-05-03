@@ -45,7 +45,7 @@
 
 
         <CheckBox
-            android:id="@+id/isfav"
+            android:id="@+id/cbIsfav"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"

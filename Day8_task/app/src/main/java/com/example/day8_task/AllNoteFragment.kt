@@ -31,17 +31,14 @@ class AllNoteFragment : Fragment() {
 
         binding.rvAllNotes.adapter = adapter
         binding.rvAllNotes.layoutManager = LinearLayoutManager(requireContext())
-    }
 
-    override fun onResume() {
-        super.onResume()
         refreshNoteList()
+
     }
 
     fun refreshNoteList() {
         CoroutineScope(Dispatchers.IO).launch {
-            val notes = noteDB.noteDao().getAllNotes()
-            adapter.updateNotes(notes)
+            adapter.updateNotes(noteDB.noteDao().getAllNotes())
         }
     }
 }

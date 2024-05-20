@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Day10_task</string>
+    <!-- Titles -->
+    <string name="title_sign_up_screen">Welcome to EcEc</string>
+
+    <!-- Button text -->
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_sign_up">SIGN UP</string>
+    <string name="btn_save">Lưu</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

@@ -73,5 +73,9 @@ class SecondActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finishAffinity()
         }
+
+        binding.btnClearText.setOnClickListener {
+            binding.edUserName.clearText()
+        }
     }
 }

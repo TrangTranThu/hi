@@ -1,5 +1,6 @@
 package com.example.day10
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -11,6 +12,9 @@ import com.google.firebase.auth.auth
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val auth = Firebase.auth
+    private  val dialogLoading by lazy {
+        Dialog(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,11 +25,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnSignIn.setOnClickListener {
+            dialogLoading.show()
             val email = binding.edEmail.text.toString()
             val password = binding.edPassword.text.toString()
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        dialogLoading.dismiss()
                         startActivity(Intent(this, SecondActivity::class.java))
                     } else {
                         Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
@@ -51,5 +57,8 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, exception.message, Toast.LENGTH_LONG).show()
                 }
         }
+
+    dialogLoading.setContentView(R.layout.dialo_loading)
+
     }
 }

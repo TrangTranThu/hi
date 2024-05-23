@@ -57,4 +57,9 @@ dependencies {
 
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
+
+    // https://mvnrepository.com/artifact/com.airbnb.android/lottie
+    implementation("com.airbnb.android:lottie:5.2.0")
+
+
 }

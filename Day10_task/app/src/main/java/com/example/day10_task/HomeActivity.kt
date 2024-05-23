@@ -1,12 +1,16 @@
 package com.example.day10_task
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.example.day10_task.databinding.ActivityHomeBinding
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 
 class HomeActivity : AppCompatActivity() {
     private val binding by lazy { ActivityHomeBinding.inflate(layoutInflater) }
+    private val auth = Firebase.auth
     private val thuFragment = ThuFragment(this)
     private val chiFragment = ChiFragment()
 
@@ -28,6 +32,11 @@ class HomeActivity : AppCompatActivity() {
             supportFragmentManager.commit {
                 replace(binding.fragment.id, chiFragment)
             }
+        }
+
+        binding.btnLogOut.setOnClickListener {
+            auth.signOut()
+            finishAffinity()
         }
     }
 }

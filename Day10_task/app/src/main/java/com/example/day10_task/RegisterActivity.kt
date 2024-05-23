@@ -15,62 +15,56 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        //signup
+/*        //signup
         binding.btnSingUp.setOnClickListener {
             val email = binding.edEmail.text.toString()
             val password = binding.edPassword.text.toString()
 
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(
-                            this,
-                            "Done",
-                            Toast.LENGTH_LONG
-                        ).show()
-                    } else {
-                        Toast.makeText(
-                            this,
-                            task.exception?.message,
-                            Toast.LENGTH_LONG
-                        ).show()
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Đăng ký thành công", Toast.LENGTH_LONG)
+                                .show()
+                        } else {
+                            Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG)
+                                .show()
+                        }
                     }
-                }
-                .addOnFailureListener { exception ->
-                    Toast.makeText(
-                        this,
-                        exception.message,
-                        Toast.LENGTH_LONG
-                    ).show()
+                    .addOnFailureListener { exception ->
+                        Toast.makeText(this, exception.message, Toast.LENGTH_LONG).show()
+                    }
+            } else {
+                Toast.makeText(this, "Email và Password không được để trống", Toast.LENGTH_LONG)
+                    .show()
+            }
+        }*/
 
-                }
-        }
 
-        //login
+/*        //login
         binding.btnLogIn.setOnClickListener {
             val email = binding.edEmail.text.toString()
             val password = binding.edPassword.text.toString()
 
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        startActivity(Intent(this, HomeActivity::class.java))
-                    } else {
-                        Toast.makeText(
-                            this,
-                            task.exception?.message,
-                            Toast.LENGTH_LONG
-                        ).show()
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            startActivity(Intent(this, HomeActivity::class.java))
+                        } else {
+                            Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
+                        }
                     }
-                }
-                .addOnFailureListener { exception ->
-                    Toast.makeText(
-                        this,
-                        exception.message,
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-        }
+                    .addOnFailureListener { exception ->
+                        Toast.makeText(this, exception.message, Toast.LENGTH_LONG).show()
+                    }
+            }
+        else {
+                Toast.makeText(this, "Email và Password không được để trống", Toast.LENGTH_LONG)
+                    .show()
+            }
+        }*/
 
+        startActivity(Intent(this, HomeActivity::class.java))
     }
 }

@@ -17,8 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ngày"
-            android:layout_marginEnd="40sp"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_marginEnd="40sp"/>
 
         <ImageButton
             android:id="@+id/btnPrevious"
@@ -91,13 +91,27 @@
             android:inputType="numberDecimal" />
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="20sp"
-        android:text="Danh mục"
-        android:textSize="20sp" />
+        android:layout_margin="20dp"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Danh mục"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtDanhMuc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp" />
+    </LinearLayout>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -116,6 +130,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icAnUong"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_food" />
@@ -138,6 +153,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icChiTieuHangNgay"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_daily_spend" />
@@ -159,6 +175,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icQAMyPham"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_clothes" />
@@ -180,6 +197,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icPhiGiaoLuu"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_exchange" />
@@ -201,6 +219,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icYTe"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_medical" />
@@ -222,6 +241,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icHocTap"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_education" />
@@ -243,6 +263,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icDiLai"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_transport" />
@@ -264,6 +285,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icLienLac"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_contact" />
@@ -285,6 +307,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/icTienDienNha"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_electric_bill" />

@@ -34,7 +34,7 @@ class ThuFragment(val applicationContext: Context) : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Hiển thị ngày hiện tại
+        // Hiển thị ngày tháng năm hiện tại
         updateDateInView()
 
         // Mở DatePicker khi nhấn vào TextView
@@ -53,6 +53,36 @@ class ThuFragment(val applicationContext: Context) : Fragment() {
             calendar.add(Calendar.DAY_OF_MONTH, 1)
             updateDateInView()
         }
+
+        binding.icAnUong.setOnClickListener {
+            setCategory("Ăn uống")
+        }
+        binding.icChiTieuHangNgay.setOnClickListener {
+            setCategory("Chi tiêu hàng ngày")
+        }
+        binding.icQAMyPham.setOnClickListener {
+            setCategory("Quần áo, mỹ phẩm")
+        }
+        binding.icPhiGiaoLuu.setOnClickListener {
+            setCategory("Phí giao lưu")
+        }
+        binding.icYTe.setOnClickListener {
+            setCategory("Y tế")
+        }
+        binding.icHocTap.setOnClickListener {
+            setCategory("Học tập")
+        }
+        binding.icDiLai.setOnClickListener {
+            setCategory("Đi lại")
+        }
+        binding.icLienLac.setOnClickListener {
+            setCategory("Liên lạc")
+        }
+        binding.icTienDienNha.setOnClickListener {
+            setCategory("Tiền điện, nhà")
+        }
+
+
 
 //        binding.btnSave.setOnClickListener {
 //            val spend = Spend(
@@ -88,5 +118,7 @@ class ThuFragment(val applicationContext: Context) : Fragment() {
 
         datePickerDialog.show()
     }
-
+    fun setCategory(category: String) {
+        binding.txtDanhMuc.text = category
+    }
 }

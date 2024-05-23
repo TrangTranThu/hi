@@ -42,6 +42,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/btnStatistic"
                     android:layout_width="30sp"
                     android:layout_height="30sp"
                     android:layout_gravity="center_horizontal"

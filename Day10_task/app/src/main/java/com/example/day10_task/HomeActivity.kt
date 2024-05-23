@@ -34,6 +34,10 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+        binding.btnStatistic.setOnClickListener{
+            startActivity(Intent(this, StatisticActivity::class.java))
+        }
+
         binding.btnLogOut.setOnClickListener {
             auth.signOut()
             finishAffinity()

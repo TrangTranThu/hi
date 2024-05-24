@@ -1,18 +1,26 @@
-package com.example.day10_task
+package com.example.day10_task.fragment
 
 import android.app.DatePickerDialog
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.day10_task.databinding.FragmentChiBinding
+import com.example.day10_task.roomdb.Spend
+import com.example.day10_task.roomdb.SpendRoomDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-class ChiFragment : Fragment() {
+class ChiFragment(val applicationContext: Context) : Fragment() {
     private val binding by lazy { FragmentChiBinding.inflate(layoutInflater) }
+//    private val spendRoomDatabase by lazy { SpendRoomDatabase.getDatabase(requireContext())}
     private val calendar: Calendar = Calendar.getInstance()
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
     override fun onCreateView(
@@ -62,6 +70,34 @@ class ChiFragment : Fragment() {
         }
         binding.icThuNhapTam.setOnClickListener {
             setCategory("Thu nhập tạm")
+        }
+
+        // CLick btn Save
+        binding.btnSave.setOnClickListener {
+            val time = binding.tvDate.text.toString()
+            val note = binding.edGhiChu.text.toString()
+            val money = binding.edTienNhan.text.toString()
+            val detail = binding.txtDanhmuc.text.toString()
+
+            if (time.isNotEmpty() && note.isNotEmpty() && money.isNotEmpty() && detail.isNotEmpty()) {
+                val spend = Spend(
+                    ngaytao = time,
+                    ghichu = note,
+                    tienchi = money.toInt(),
+                    danhmuc = detail
+                )
+
+                Toast.makeText(context, "done", Toast.LENGTH_LONG).show()
+                CoroutineScope(Dispatchers.IO).launch {
+//                    spendRoomDatabase.spendDao().addSpend(spend)
+                }
+            } else {
+                Toast.makeText(
+                    context,
+                    "Ghi chú, tiền nhận, danh mục không được để trống",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
     }
 

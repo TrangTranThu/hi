@@ -1,11 +1,16 @@
-package com.example.day10_task
+package com.example.day10_task.roomdb
 
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.day10_task.Converters
+import com.example.day10_task.fragment.ThuFragment
 
 @Database(entities = [Spend::class], version = 2, exportSchema = false)
-abstract class SpendRoomDatabase : RoomDatabase() {
+@TypeConverters(Converters::class)
+abstract class SpendRoomDatabase() : RoomDatabase() {
     abstract fun spendDao(): SpendDao
 
     companion object {

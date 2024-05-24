@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChiFragment"
+    tools:context=".fragment.ChiFragment"
     android:orientation="vertical">
 
     <LinearLayout
@@ -67,6 +67,7 @@
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/edGhiChu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -82,11 +83,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20sp"
-            android:text="Tiền chi"
+            android:text="Tiền nhận"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/edTienNhan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal" />

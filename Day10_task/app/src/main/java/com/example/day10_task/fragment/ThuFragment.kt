@@ -1,4 +1,4 @@
-package com.example.day10_task
+package com.example.day10_task.fragment
 
 import android.app.DatePickerDialog
 import android.content.Context
@@ -6,16 +6,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.day10_task.roomdb.Spend
+import com.example.day10_task.roomdb.SpendRoomDatabase
 import com.example.day10_task.databinding.FragmentThuBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Calendar
-import java.util.Date
 import java.util.Locale
 
 class ThuFragment(val applicationContext: Context) : Fragment() {
@@ -82,20 +82,33 @@ class ThuFragment(val applicationContext: Context) : Fragment() {
             setCategory("Tiền điện, nhà")
         }
 
+        // CLick btn Save
+        binding.btnSave.setOnClickListener {
+            val time = binding.tvDate.text.toString()
+            val note = binding.edGhiChu.text.toString()
+            val money = binding.edTienChi.text.toString()
+            val detail = binding.txtDanhMuc.text.toString()
 
+            if (time.isNotEmpty() && note.isNotEmpty() && money.isNotEmpty() && detail.isNotEmpty()) {
+                val spend = Spend(
+                    ngaytao = time,
+                    ghichu = note,
+                    tienchi = money.toInt(),
+                    danhmuc = detail
+                )
 
-//        binding.btnSave.setOnClickListener {
-//            val spend = Spend(
-//                ngaytao = System.currentTimeMillis(),
-//                ghichu = binding.edGhiChu.text.toString(),
-//                tienchi = binding.edTienChi.text.toString().toInt(),
-//                danhmuc = true,
-//            )
-//            Toast.makeText(context, "done", Toast.LENGTH_LONG).show()
-//            CoroutineScope(Dispatchers.IO).launch {
-//                spendRoomDatabase.spendDao().addSpend(spend)
-//            }
-//        }
+                Toast.makeText(context, "done", Toast.LENGTH_LONG).show()
+                CoroutineScope(Dispatchers.IO).launch {
+                    spendRoomDatabase.spendDao().addSpend(spend)
+                }
+            } else {
+                Toast.makeText(
+                    context,
+                    "Ghi chú, tiền chi, danh mục không được để trống",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
     }
     private fun updateDateInView() {
         binding.tvDate.text = dateFormat.format(calendar.time)

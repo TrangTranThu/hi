@@ -1,10 +1,16 @@
-package com.example.day10_task
+package com.example.day10_task.activity
 
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.day10_task.databinding.ActivityStatisticBinding
+import com.example.day10_task.fragment.ThuFragment
+import com.example.day10_task.roomdb.SpendDao
+import com.example.day10_task.roomdb.SpendRoomDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -13,6 +19,7 @@ class StatisticActivity : AppCompatActivity() {
     private val binding by lazy { ActivityStatisticBinding.inflate(layoutInflater) }
     private val calender: Calendar = Calendar.getInstance()
     private val dateFormat = SimpleDateFormat("MM/yyyy", Locale.getDefault())
+//    private val spendRoomDatabase = SpendRoomDatabase.getDatabase()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -35,12 +42,12 @@ class StatisticActivity : AppCompatActivity() {
             calender.add(Calendar.MONTH, 1)
             updateDateInView()
         }
+
     }
 
     private fun updateDateInView() {
         binding.tvDate.text = dateFormat.format(calender.time)
     }
-
     private fun showDatePickerDialog() {
         val year = calender.get(Calendar.YEAR)
         val month = calender.get(Calendar.MONTH)
@@ -58,4 +65,5 @@ class StatisticActivity : AppCompatActivity() {
         )
         datePickerDialog.show()
     }
+
 }

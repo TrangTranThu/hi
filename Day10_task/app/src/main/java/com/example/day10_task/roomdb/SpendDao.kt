@@ -7,11 +7,12 @@ import androidx.room.Query
 import com.example.day10_task.roomdb.Spend
 
 @Dao
-interface SpendDao {
+public interface SpendDao {
     @Query("SELECT * FROM spend_table")
-    fun getAllSpend(): List<Spend>
+    public fun getAllSpend(): List<Spend>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addSpend(spend: Spend)
+
 
 }

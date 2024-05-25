@@ -20,7 +20,7 @@ import java.util.Locale
 
 class ChiFragment(val applicationContext: Context) : Fragment() {
     private val binding by lazy { FragmentChiBinding.inflate(layoutInflater) }
-//    private val spendRoomDatabase by lazy { SpendRoomDatabase.getDatabase(requireContext())}
+    private val spendRoomDatabase by lazy { SpendRoomDatabase.getDatabase(requireContext())}
     private val calendar: Calendar = Calendar.getInstance()
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
     override fun onCreateView(

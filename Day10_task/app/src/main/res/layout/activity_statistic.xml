@@ -146,6 +146,7 @@
             android:layout_height="2dp"
             android:background="@color/black" />
     </LinearLayout>
+<!--
 
     <ScrollView
         android:layout_width="match_parent"
@@ -592,5 +593,11 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycerViewStatistic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20sp"/>
 
 </LinearLayout>

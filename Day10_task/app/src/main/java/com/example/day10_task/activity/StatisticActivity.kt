@@ -1,16 +1,17 @@
 package com.example.day10_task.activity
 
 import android.app.DatePickerDialog
-import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.day10_task.R
 import com.example.day10_task.databinding.ActivityStatisticBinding
-import com.example.day10_task.fragment.ThuFragment
-import com.example.day10_task.roomdb.SpendDao
-import com.example.day10_task.roomdb.SpendRoomDatabase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.example.day10_task.recyclerview.News
+import com.example.day10_task.recyclerview.NewsAdapter
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -19,7 +20,11 @@ class StatisticActivity : AppCompatActivity() {
     private val binding by lazy { ActivityStatisticBinding.inflate(layoutInflater) }
     private val calender: Calendar = Calendar.getInstance()
     private val dateFormat = SimpleDateFormat("MM/yyyy", Locale.getDefault())
-//    private val spendRoomDatabase = SpendRoomDatabase.getDatabase()
+    private lateinit var newRecyclerView: RecyclerView
+    private lateinit var newArrayList: ArrayList<News>
+    lateinit var imageId: Array<Int>
+    lateinit var heading: Array<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -43,6 +48,48 @@ class StatisticActivity : AppCompatActivity() {
             updateDateInView()
         }
 
+
+        //recyclerView
+        imageId = arrayOf(
+            R.drawable.ic_food,
+            R.drawable.ic_daily_spend,
+            R.drawable.ic_clothes,
+            R.drawable.ic_exchange,
+            R.drawable.ic_medical,
+            R.drawable.ic_education,
+            R.drawable.ic_transport,
+            R.drawable.ic_contact,
+            R.drawable.ic_electric_bill,
+            R.drawable.ic_salary,
+            R.drawable.ic_pocket_money,
+            R.drawable.ic_bonus,
+            R.drawable.ic_side_job,
+            R.drawable.ic_investment,
+            R.drawable.ic_extra,
+
+            )
+        heading = arrayOf(
+            "Ăn uống",
+            "Chi tiêu hàng ngày",
+            "Quần áo, mỹ phẩm",
+            "Phí giao lưu",
+            "Y tế",
+            "Học tập",
+            "Đi lại",
+            "Liên lạc",
+            "Tiền điện, nhà",
+            "Tiền lương",
+            "Tiền phụ cấp",
+            "Tiền thưởng",
+            "Thu nhập phụ",
+            "Đầu  từ",
+            "Thu nhập tạm"
+        )
+        newRecyclerView = findViewById(R.id.recycerViewStatistic)
+        newRecyclerView.layoutManager = LinearLayoutManager(this)
+        newArrayList = arrayListOf<News>()
+        getUserData()
+
     }
 
     private fun updateDateInView() {
@@ -64,6 +111,14 @@ class StatisticActivity : AppCompatActivity() {
             day
         )
         datePickerDialog.show()
+    }
+
+    private fun getUserData() {
+        for (i in imageId.indices) {
+            val news = News(imageId[i], heading[i])
+            newArrayList.add(news)
+        }
+        newRecyclerView.adapter = NewsAdapter(newArrayList)
     }
 
 }

@@ -8,7 +8,7 @@ import androidx.room.TypeConverters
 import com.example.day10_task.Converters
 import com.example.day10_task.fragment.ThuFragment
 
-@Database(entities = [Spend::class], version = 2, exportSchema = false)
+@Database(entities = [Spend::class], version = 3, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class SpendRoomDatabase() : RoomDatabase() {
     abstract fun spendDao(): SpendDao
@@ -17,7 +17,7 @@ abstract class SpendRoomDatabase() : RoomDatabase() {
         @Volatile
         private var INSTANCE: SpendRoomDatabase? = null
 
-        fun getDatabase(context: ThuFragment): SpendRoomDatabase {
+        fun getDatabase(context: Context): SpendRoomDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,

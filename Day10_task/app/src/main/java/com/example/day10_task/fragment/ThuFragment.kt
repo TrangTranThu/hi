@@ -22,7 +22,7 @@ class ThuFragment(val applicationContext: Context) : Fragment() {
     private val binding by lazy { FragmentThuBinding.inflate(layoutInflater) }
     private val calendar: Calendar = Calendar.getInstance()
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-    private val spendRoomDatabase by lazy { SpendRoomDatabase.getDatabase(this) }
+    private val spendRoomDatabase by lazy { SpendRoomDatabase.getDatabase(this.applicationContext) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -109,6 +109,8 @@ class ThuFragment(val applicationContext: Context) : Fragment() {
                 ).show()
             }
         }
+
+
     }
     private fun updateDateInView() {
         binding.tvDate.text = dateFormat.format(calendar.time)

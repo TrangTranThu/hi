@@ -2,6 +2,7 @@ package com.example.day10_task.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.day10_task.databinding.ActivityRegisterBinding
 import com.google.firebase.Firebase
@@ -14,7 +15,6 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-/*
         //signup
         binding.btnSingUp.setOnClickListener {
             val email = binding.edEmail.text.toString()
@@ -63,8 +63,7 @@ class RegisterActivity : AppCompatActivity() {
                     .show()
             }
         }
-*/
 
-        startActivity(Intent(this, HomeActivity::class.java))
+//        startActivity(Intent(this, HomeActivity::class.java))
     }
 }
